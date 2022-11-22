@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "gramscraper"
+version = "0.0.1"
+description = "elsalvadorgram scraping pipeline"
+authors = ["me"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.11"
+selenium = "^4.6.0"
+bs4 = "^0.0.1"
+
+[tool.kedro]
+package_name = "gramscraper"
+project_name = "gramscraper"
+project_version = "0.18.3"
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+addopts = """
+--cov-report term-missing \
+--cov src/gramscraper -ra"""
+
+[tool.coverage.report]
+fail_under = 0
+show_missing = true
+exclude_lines = ["pragma: no cover", "raise NotImplementedError"]
