@@ -44,12 +44,6 @@ class Crawler(object):
 
 class Scraper(object):
 
-    def __init__(self, browser):
-        self.browser = browser
-        self.image_tag_id = "mvp-post-feat-img"
-        self.title_tag_id = "mvp-post-head"
-        self.content_tag_id = "mvp-content-main"
-
     def get_image_url(self, article):
         try:
             return article.find("div", {"id": self.image_tag_id}).find("img")["src"]
